@@ -30,11 +30,11 @@
     <div class="menu_content">
       <ul class="menu_items">
         <li class="item">
-          <div href="#" class="nav_link submenu_item">
+          <div routerLink="/dashboard/dashboard-body" class="nav_link submenu_item">
             <span class="navlink_icon">
               <i class="bx bx-home-alt"></i>
             </span>
-            <span class="navlink" style="color:white">Dashboard</span>
+            <span class="navlink" style="color:white" >Dashboard</span>
           </div>
           <!-- <ul class="menu_items submenu">
               <a href="#" class="nav_link sublink">Nav Sub Link</a>
@@ -44,7 +44,7 @@
             </ul> -->
         </li>
         <li class="item">
-          <div href="#" class="nav_link submenu_item">
+          <div class="nav_link submenu_item">
             <span class="navlink_icon">
               <i class="bx bx-grid-alt"></i>
             </span>
@@ -52,8 +52,8 @@
             <i class="bx bx-chevron-right arrow-left"></i>
           </div>
           <ul class="menu_items submenu">
-            <a href="#" class="nav_link sublink">M1</a>
-            <a href="#" class="nav_link sublink">M2</a>
+            <a routerLink="/dashboard/master/users" class="nav_link sublink">M1</a>
+            <a routerLink = "/dashboard/master/state" class="nav_link sublink">M2</a>
             <a href="#" class="nav_link sublink">M3</a>
             <a href="#" class="nav_link sublink">M4</a>
           </ul>
@@ -175,5 +175,6 @@
 
 <!-- Main content wrapper -->
 <div class="main-content">
-  <app-dashboard-body></app-dashboard-body>
+  <!-- <app-dashboard-body></app-dashboard-body> -->
+  <router-outlet></router-outlet>
 </div>

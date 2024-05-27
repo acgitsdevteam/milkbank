@@ -63,7 +63,7 @@ export class DashboardComponent implements OnInit{
         }
       });
     }
-  /*********************koti************************ */
+  
     if (submenuItems) {
       submenuItems.forEach((item: HTMLElement) => {
         item.addEventListener("click", () => {
