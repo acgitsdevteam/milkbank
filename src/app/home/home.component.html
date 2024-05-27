@@ -1,0 +1,120 @@
+<!-- Navbar -->
+<header class="bg-white lg:static lg:overflow-y-visible py-4 md:py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="relative flex justify-between h-10">
+            <div class="flex md:absolute md:left-0 md:inset-y-0 lg:static xl:col-span-2">
+                <div class="flex-shrink-0 flex items-center">
+                    <a routerLink="/">
+                        <img class="block h-9 md:h-10 w-auto" src="/assets/logo/logoFull.svg" alt="logo" />
+                    </a>
+                </div>
+            </div>
+            <div class="hidden lg:flex lg:items-center lg:justify-end">
+                <a routerLink="/contactUs"
+                    class="ml-6 transition transform ease-in-out duration-150 hover:scale-105 inline-flex font-roboto items-center px-4 py-2 text-base font-medium text-neutral-gray-700 focus:outline-none focus:ring-0 focus:ring-offset-2">
+                    Contact Us
+                </a>
+                <a routerLink="/aboutUs"
+                    class="ml-6 transition transform ease-in-out duration-150 hover:scale-105 inline-flex font-roboto items-center px-4 py-2 text-base font-medium text-neutral-gray-700 focus:outline-none focus:ring-0 focus:ring-offset-2">
+                    About Us
+                </a>
+                <a routerLink="/access/login"
+                    class="ml-6 transition transform ease-in-out duration-150 hover:scale-105 inline-flex font-roboto bg-primary-pink-medium items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white focus:outline-none focus:ring-0 focus:ring-offset-2">
+                    Login
+                </a>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+
+<main
+    class="flex-row space-y-12 lg:space-y-0 items-center justify-center mx-auto w-full pb-6 500px:pb-20 text-center lg:text-left">
+    <div class="flex-row items-center justify-center w-full">
+        <h1 class="text-4xl flex justify-center font-bold font-raleway text-neutral-gray-700 sm:text-5xl">
+            Save a Preterm Baby's Life
+        </h1>
+        <p
+            class="mt-3 flex sm:ml-10 sm:mr-10 justify-center sm:text-center text-justify text-sm font-normal font-roboto text-neutral-gray-500 sm:text-base md:mt-5">
+            There have been continuous efforts from all health organizations
+            including WHO, UNICEF, WABA, IAP, BPNI, GoI and NNF in Promoting
+            Mothers Milk as Primary Souce of Nutrition for prematurely born
+            infants because of its gastrointestinal, immunological and
+            developmental advantages. Protecting, promoting and supporting
+            breastfeeding will save more lives of babies and children than any
+            other single preventive intervention. Milk Banks are a Low Cost, High
+            Impact Intervention towards saving preterm lives and ensuring Mother
+            and Child Health. When Direct Mother's Own Milk (MOM) is not
+            possible. Donor Human Milk (DHM) from Healthy Donor Mothers or
+            Pasteurised Donor Human Milk (PDHM) from Mothers Milk Bank is the Next
+            Best Choice.
+        </p>
+    </div>
+    <div class="pt-5 w-full flex-row">
+        <h1 class="text-3xl mb-5 flex justify-center font-bold font-raleway text-neutral-gray-700 sm:text-4xl">
+            Sushena Health Foundation's
+        </h1>
+        <img style="border-radius: 8px;" src="/assets/hero1.jpg"
+            class="mx-auto bg-primary-pink-medium lg:top-12 video-player object-cover" />
+    </div>
+</main>
+
+<div id="donationCategory" class="py-10">
+    <h1 class="text-neutral-gray-700 font-raleway font-bold text-4xl md:text-5xl text-left">
+        Donation Category
+    </h1>
+    <div
+        class="flex py-10 justify-center lg:justify-between flex-col md:flex-row md:flex-wrap lg:flex-nowrap items-stretch">
+        <div *ngFor="let item of list" class="flex flex-col items-center space-y-5 p-5">
+            <div
+                class="max-w-sm w-64 md:w-72 md:h-72 aspect-square rounded-lg bg-primary-pink-medium flex flex-col items-center overflow-y-auto image-container">
+                <img *ngFor="let image of item.images" [src]="image" alt="" class="w-full object-cover mb-2" />
+            </div>
+            <div class="text-center">
+                <h1 class="text-neutral-gray-600 font-raleway font-bold text-2xl">
+                    {{ item.name }}
+                </h1>
+                <div class="flex justify-center mt-2">
+                    <a
+                        class="transition transform ease-in-out duration-150 hover:scale-105 inline-flex font-roboto bg-primary-pink-medium items-center px-10 py-2.5 border border-transparent text-base font-medium rounded-md shadow-sm text-white focus:outline-none focus:ring-0 focus:ring-offset-2">
+                        Donate Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- <-------FOOTER------>
+<footer class="bg-primary-pink-light border-top py-6">
+    <div class="container p-5">
+        <div class="row align-items-center">
+            <div class="col-md-4 text-center text-md-start mb-3 mb-md-0">
+                <a href="/" class="d-flex justify-content-center justify-content-md-start">
+                    <img src="/assets/logo/logoFull.svg" alt="logo" class="footer-logo img-fluid">
+                </a>
+            </div>
+            <div class="col-md-8">
+                <div class="d-flex flex-wrap justify-content-center justify-content-md-end">
+                    <a href="/contactUs" class="footer-link mx-2">
+                        Contact Us
+                    </a>
+                    <a href="/refundPolicy" class="footer-link mx-2">
+                        Refund Policy
+                    </a>
+                    <a href="/privacyPolicy" class="footer-link mx-2">
+                        Privacy Policy
+                    </a>
+                    <a href="/aboutUs" class="footer-link mx-2">
+                        About Us
+                    </a>
+                    <a href="/termsNConditions" class="footer-link mx-2">
+                        Terms & Conditions
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
