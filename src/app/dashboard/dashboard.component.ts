@@ -1,14 +1,32 @@
 import { Component, OnInit } from '@angular/core';
 
+import { TokenStorageService } from '../services/token-storage.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit{
-  constructor() { }
+  private roles: string[] = [];
+  isLoggedIn = false;
+  showAdminBoard = false;
+  showModeratorBoard = false;
+  username?: string;
+  constructor(private tokenStorageService: TokenStorageService,private router: Router) { }
 
   ngOnInit(): void {
+    this.isLoggedIn = !!this.tokenStorageService.getToken();
+
+    if (this.isLoggedIn) {
+      const user = this.tokenStorageService.getUser();
+      this.roles = user.roles;
+
+      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
+      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
+
+      this.username = user.username;
+    }
     const sidebarOpen = document.getElementById("sidebarOpen");
     const sidebarClose = document.querySelector(".collapse_sidebar");
     const sidebarExpand = document.querySelector(".expand_sidebar");
@@ -76,5 +94,10 @@ export class DashboardComponent implements OnInit{
         });
       });
     }
+  }
+  logout(): void {
+    this.tokenStorageService.signOut();
+    this.router.navigate(["/"]);
+    //window.location.reload();
   }
 }
