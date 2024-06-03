@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardBodyComponent } from './dashboard/dashboard-body/dashboard-body.component';
+import { AccessModule } from './access/access.module';
 
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { RouterModule } from '@angular/router';
@@ -26,6 +27,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
+<<<<<<< Updated upstream
     FormsModule,
     HttpClientModule,
     RouterModule,
@@ -37,6 +39,9 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
+=======
+    AccessModule
+>>>>>>> Stashed changes
   ],
   exports:[
     FormsModule,
