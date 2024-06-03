@@ -12,8 +12,8 @@ const routes: Routes = [
   { path: 'access', loadChildren: () => import('./access/access.module').then(m => m.AccessModule) },
   {
     path: 'dashboard', component: DashboardComponent, children: [
+      { path: '', component: DashboardBodyComponent},
       { path: 'master', loadChildren: () => import('./master/master.module').then(m => m.MasterModule) },
-      { path: 'dashbord-body', component: DashboardBodyComponent}
 
     ]
   },

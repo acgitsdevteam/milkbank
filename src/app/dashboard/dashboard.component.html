@@ -1,17 +1,7 @@
 <div>
   <!-- navbar -->
   <nav class="navbar">
-    <div>
-      <!-- <i class="bi bi-list"></i> -->
-      <div class="bottom_content">
-        <div class="bottom expand_sidebar">
-          <i class='bi bi-list'></i>
-        </div>
-        <div class="bottom collapse_sidebar">
-          <i class='bi bi-list'></i>
-        </div>
-      </div>
-    </div>
+
     <div class="logo_item">
       <i class="bx bx-menu" id="sidebarOpen"></i>
     </div>
@@ -20,17 +10,37 @@
       <i class="bi bi-grid"></i>
       <i class='bx bx-sun' id="darkLight"></i>
       <i class='bx bx-bell'></i>
-      <img src="../images/profile.jpg" alt="Profile" class="profile" /><a (click)="logout()">{{ username }}</a>
+      
+      <div class="dropdown">
+          <img src="assets\images\profile.png" alt="Profile" class="profile" data-bs-toggle="dropdown"/>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">My Profile</a></li>
+          <li><a class="dropdown-item" href="#">Change Password</a></li>
+          <li><a class="dropdown-item" href="#">Log Out</a></li>
+        </ul>
+      </div>
+      <a (click)="logout()">{{ username }}</a>
     </div>
   </nav>
 
   <!-- sidebar -->
   <nav class="sidebar">
+    <div>
+      <div class="bottom_content">
+        <div class="bottom expand_sidebar">
+          <i class="bi bi-arrow-right-square"></i>
+        </div>
+        <div class="bottom collapse_sidebar">
+          <i class="bi bi-arrow-left-square"></i>
+        </div>
+      </div>
+    </div>
       <img src="assets\favicon\android-chrome1-512x512.png" alt="Sushena Health Foundation" class="sushnImg" />
+      
     <div class="menu_content">
       <ul class="menu_items">
         <li class="item">
-          <div routerLink="/dashboard/dashboard-body" class="nav_link submenu_item">
+          <div routerLink="/dashboard" class="nav_link submenu_item">
             <span class="navlink_icon">
               <i class="bx bx-home-alt"></i>
             </span>
@@ -52,9 +62,9 @@
             <i class="bx bx-chevron-right arrow-left"></i>
           </div>
           <ul class="menu_items submenu">
-            <a routerLink="/dashboard/master/users" class="nav_link sublink">M1</a>
-            <a routerLink = "/dashboard/master/state" class="nav_link sublink">M2</a>
-            <a href="#" class="nav_link sublink">M3</a>
+            <a routerLink="/dashboard/master/users" class="nav_link sublink">Users</a>
+            <a routerLink = "/dashboard/master/state" class="nav_link sublink">State</a>
+            <a href="#" class="nav_link sublink">District</a>
             <a href="#" class="nav_link sublink">M4</a>
           </ul>
         </li>
@@ -89,40 +99,7 @@
           </ul>
         </li>
       </ul>
-      <!-- <ul class="menu_items">
-          <li class="item">
-            <a href="#" class="nav_link">
-              <span class="navlink_icon">
-                <i class="bx bxs-magic-wand"></i>
-              </span>
-              <span class="navlink">Magic build</span>
-            </a>
-          </li>
-          <li class="item">
-            <a href="#" class="nav_link">
-              <span class="navlink_icon">
-                <i class="bx bx-loader-circle"></i>
-              </span>
-              <span class="navlink">Filters</span>
-            </a>
-          </li>
-          <li class="item">
-            <a href="#" class="nav_link">
-              <span class="navlink_icon">
-                <i class="bx bx-filter"></i>
-              </span>
-              <span class="navlink">Filter</span>
-            </a>
-          </li>
-          <li class="item">
-            <a href="#" class="nav_link">
-              <span class="navlink_icon">
-                <i class="bx bx-cloud-upload"></i>
-              </span>
-              <span class="navlink">Upload new</span>
-            </a>
-          </li>
-        </ul> -->
+ 
       <!-- <ul class="menu_items">
           <li class="item">
             <a href="#" class="nav_link">
@@ -176,5 +153,6 @@
 <!-- Main content wrapper -->
 <div class="main-content">
   <!-- <app-dashboard-body></app-dashboard-body> -->
+  <app-breadcrumb></app-breadcrumb>
   <router-outlet></router-outlet>
 </div>

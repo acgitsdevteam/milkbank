@@ -2,6 +2,8 @@ import { Component, EventEmitter, Input, OnInit, Output, OnDestroy} from '@angul
 import { AuthService } from 'src/app/services/auth.service';
 import { TokenStorageService } from 'src/app/services/token-storage.service';
 import { Router } from '@angular/router';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ToastrService } from 'ngx-toastr';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -16,8 +18,9 @@ export class LoginComponent implements OnInit , OnDestroy{
   isLoginFailed = false;
   errorMessage = '';
   roles: string[] = [];
+  @Output() closePopup = new EventEmitter<void>();
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,private router: Router) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService,private router: Router,private fb:FormBuilder,private toastr: ToastrService) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
@@ -25,10 +28,22 @@ export class LoginComponent implements OnInit , OnDestroy{
       this.roles = this.tokenStorage.getUser().roles;
     }
   }
-  onSubmit(): void {
-    const { useremail, password } = this.form;
 
-    this.authService.login(useremail, password).subscribe(
+  loginForm = this.fb.group(
+    {
+      useremail:this.fb.control(null,[Validators.required,Validators.email]),
+      password:this.fb.control(null,[Validators.required])
+    },
+  )
+  
+  onSubmit(): void {
+    // const { useremail, password } = this.form;
+    if(!this.loginForm.valid){
+      this.toastr.error('Enter full details','ERROR')
+      return;
+    }
+
+    this.authService.login(this.loginForm.value).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
         this.tokenStorage.saveUser(data);
@@ -37,11 +52,14 @@ export class LoginComponent implements OnInit , OnDestroy{
         this.isLoggedIn = true;
         this.roles = this.tokenStorage.getUser().roles;
        // this.reloadPage();
-       this.router.navigate(["/dashboard"]);
+       this.toastr.success('Login Success','SUCCESS')
+       setTimeout(() => {
+        this.router.navigate(["/dashboard"]);
+       }, 500);
       },
       err => {
-        this.errorMessage = err.error.message;
-        this.isLoginFailed = true;
+        let errMsg = err.error.message;
+        this. toastr.error(errMsg,'ERROR');
       }
     );
   }
@@ -52,5 +70,9 @@ export class LoginComponent implements OnInit , OnDestroy{
   }
   ngOnDestroy(): void {
     
+  }
+
+  close() {
+    this.closePopup.emit();
   }
 }

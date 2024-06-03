@@ -8,6 +8,7 @@ import { Router } from '@angular/router';
 })
 export class HomeComponent {
   list: any = [];
+  showModal:boolean = false;
   constructor(private router: Router) { }
 
   ngOnInit(): void {
@@ -48,5 +49,15 @@ export class HomeComponent {
 
   navigate() {
     this.router.navigateByUrl('/access/login');
+  }
+  openModal() {
+    this.showModal = true;
+    document.body.classList.add('modal-open');
+  }
+
+  closeModal(event: Event) {
+    event.stopPropagation();
+    this.showModal = false;
+    document.body.classList.remove('modal-open');
   }
 }

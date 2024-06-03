@@ -1,44 +1,24 @@
-<div class="page-holder align-items-center py-4 bg-gray-100 vh-100">
+<div class="page-holder align-items-center py-4 bg-gray-100 vh-100%">
   <div class="container">
     <div class="row align-items-center">
-      <div class="col-lg-3 px-lg-2"  >
-        </div>
-      <div class="col-lg-6 px-lg-4"  >
+
+      <div class="col-lg-12 px-lg-4">
         <div class="card">
-          <div class="card-header px-lg-6">
-          
+          <!-- <div class="card-header px-lg-6">
+
             <h3 class="mb-1">Milk Bank</h3>
-          </div>
+          </div> -->
           <div class="card-body p-lg-5">
-                    
-            <form
-            *ngIf="!isLoggedIn"
-            name="form"
-            (ngSubmit)="f.form.valid && onSubmit()"
-            #f="ngForm"
-            novalidate
-          >
+
+            <form *ngIf="!isLoggedIn" name="form"  [formGroup]="loginForm" (ngSubmit)="onSubmit()">
               <div class="form-floating mb-3">
-                <input
-                type="text"
-                class="form-control"
-                name="useremail"
-                [(ngModel)]="form.useremail"
-                required
-                #username="ngModel"
-              />
+                <input type="text" class="form-control" name="useremail" [(ngModel)]="form.useremail" required
+                 formControlName="useremail"/>
                 <label for="floatingInput">Email address</label>
               </div>
               <div class="form-floating mb-3">
-                <input
-          type="password"
-          class="form-control"
-          name="password"
-          [(ngModel)]="form.password"
-          required
-          minlength="6"
-          #password="ngModel"
-        />
+                <input type="password" class="form-control" name="password" [(ngModel)]="form.password"
+                 formControlName="password" />
                 <label for="floatingPassword">Password</label>
               </div>
               <div class="form-check mb-3">
@@ -47,18 +27,18 @@
               </div>
               <!-- <button class="btn btn-primary" type="button">Login</button>
                <button routerLink="/dashboard" class="btn btn-success">Login</button> -->
-               <button class="btn btn-primary btn-block">
+              <button class="btn btn-primary btn-block" type="submit">
                 Login
               </button>
             </form>
           </div>
-          <div class="card-footer px-lg-5 py-lg-4">
-            <div class="text-sm text-muted">Don't have an account? <a >Register</a>.</div>
+          <div class="card-footer ">
+            <div class="text-sm text-muted">Don't have an account? <a>Register</a>.</div>
           </div>
         </div>
       </div>
       <!-- register -->
-       <!-- <div class="col-lg-6 px-lg-4" *ngIf="userregister">
+      <!-- <div class="col-lg-6 px-lg-4" *ngIf="userregister">
         <div class="card">
           <div class="card-header px-lg-5">
             <div class="card-heading text-primary">Jassa Register</div>
@@ -93,8 +73,7 @@
           </div>
         </div>
       </div> -->
-      <div class="col-lg-3 px-lg-2"  >
-      </div>
+  
     </div>
   </div>
 </div>

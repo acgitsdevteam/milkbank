@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserModule } from '@angular/platform-browser';
 
@@ -10,22 +10,38 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { DashboardBodyComponent } from './dashboard/dashboard-body/dashboard-body.component';
 
 import { authInterceptorProviders } from './helpers/auth.interceptor';
+import { RouterModule } from '@angular/router';
+import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
+import { AccessModule } from './access/access.module';
+import { ToastrModule } from 'ngx-toastr';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     DashboardComponent,
-    DashboardBodyComponent
+    DashboardBodyComponent,
+    BreadcrumbComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule,
+    AccessModule,
+    ReactiveFormsModule,
+    BrowserAnimationsModule, // required animations module
+    ToastrModule.forRoot({
+      timeOut: 3000, // 3 seconds
+      positionClass: 'toast-top-right',
+      preventDuplicates: true,
+    }),
   ],
   exports:[
     FormsModule,
-    BrowserModule
+    BrowserModule,
+    ReactiveFormsModule
   ],
   providers: [authInterceptorProviders],
   bootstrap: [AppComponent]

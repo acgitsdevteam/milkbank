@@ -1,0 +1,21 @@
+.custom-border {
+    border: 2px solid #bfc0e3;
+    padding: 15px;
+}
+
+/* .txt {
+    margin-left: 75%;
+    width: 25%;
+} */
+
+.table {
+    text-align: center;
+}
+
+.srch{
+    width: 35%;
+    margin-left: 65%;
+}
+
+
+

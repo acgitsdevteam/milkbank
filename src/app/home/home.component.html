@@ -18,7 +18,7 @@
                     class="ml-6 transition transform ease-in-out duration-150 hover:scale-105 inline-flex font-roboto items-center px-4 py-2 text-base font-medium text-neutral-gray-700 focus:outline-none focus:ring-0 focus:ring-offset-2">
                     About Us
                 </a>
-                <a routerLink="/access/login"
+                <a (click)="openModal()"
                     class="ml-6 transition transform ease-in-out duration-150 hover:scale-105 inline-flex font-roboto bg-primary-pink-medium items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-white focus:outline-none focus:ring-0 focus:ring-offset-2">
                     Login
                 </a>
@@ -118,3 +118,40 @@
         </div>
     </div>
 </footer>
+
+<!-- Button to trigger the modal -->
+<button type="button" class="btn btn-primary" >Open Modal</button>
+
+<!-- Modal structure -->
+<!-- <div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show d-block': showModal}" (click)="closeModal($event)">
+  <div class="modal-dialog" role="document" (click)="$event.stopPropagation()">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">USER LOGIN</h5>
+        <button type="button" class="close" >
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <app-login></app-login>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<div class="modal-backdrop" *ngIf="showModal"></div>
+<div class="modal" tabindex="-1" role="dialog" [ngClass]="{'show d-block': showModal}" (click)="closeModal($event)">
+    <div class="modal-dialog" role="document" (click)="$event.stopPropagation()">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-center">USER REGISTRATION</h5>
+                <button type="button" class="close" (click)="closeModal($event)">
+                    <span>&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <app-login></app-login>
+            </div>
+        </div>
+    </div>
+</div>

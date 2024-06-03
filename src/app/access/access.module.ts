@@ -4,7 +4,7 @@ import { CommonModule } from '@angular/common';
 import { AccessRoutingModule } from './access-routing.module';
 import { AccessComponent } from './access.component';
 import { LoginComponent } from './login/login.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 
@@ -16,8 +16,12 @@ import { BrowserModule } from '@angular/platform-browser';
   imports: [
     CommonModule,
     AccessRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
     //BrowserModule
+  ],
+  exports:[
+    LoginComponent
   ]
 })
 export class AccessModule { }
