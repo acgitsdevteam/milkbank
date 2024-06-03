@@ -15,14 +15,10 @@ import { BrowserModule } from '@angular/platform-browser';
   ],
   imports: [
     CommonModule,
-<<<<<<< Updated upstream
     AccessRoutingModule,
     FormsModule,
     ReactiveFormsModule
     //BrowserModule
-=======
-    AccessRoutingModule
->>>>>>> Stashed changes
   ],
   exports:[
     LoginComponent

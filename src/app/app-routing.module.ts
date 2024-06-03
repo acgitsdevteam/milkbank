@@ -12,11 +12,7 @@ const routes: Routes = [
   { path: 'access', loadChildren: () => import('./access/access.module').then(m => m.AccessModule) },
   {
     path: 'dashboard', component: DashboardComponent, children: [
-<<<<<<< Updated upstream
       { path: '', component: DashboardBodyComponent},
-=======
-      { path: 'dashboard-body', component: DashboardBodyComponent},
->>>>>>> Stashed changes
       { path: 'master', loadChildren: () => import('./master/master.module').then(m => m.MasterModule) },
 
     ]

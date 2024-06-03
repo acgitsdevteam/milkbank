@@ -13,7 +13,6 @@ import { AccessModule } from './access/access.module';
 import { authInterceptorProviders } from './helpers/auth.interceptor';
 import { RouterModule } from '@angular/router';
 import { BreadcrumbComponent } from './breadcrumb/breadcrumb.component';
-import { AccessModule } from './access/access.module';
 import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
@@ -27,7 +26,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
   imports: [
     BrowserModule,
     AppRoutingModule,
-<<<<<<< Updated upstream
     FormsModule,
     HttpClientModule,
     RouterModule,
@@ -39,9 +37,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
       positionClass: 'toast-top-right',
       preventDuplicates: true,
     }),
-=======
-    AccessModule
->>>>>>> Stashed changes
   ],
   exports:[
     FormsModule,
