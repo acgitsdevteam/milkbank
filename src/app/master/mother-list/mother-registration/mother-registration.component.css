@@ -7,6 +7,11 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
+.card-header {
+    width: 100%;
+    margin-left: 1px;
+}
+
 .container {
     background-color: #fff;
 }
@@ -14,6 +19,7 @@ body {
 .step-wrapper {
     padding: 20px 0;
     display: none;
+    margin-left: 50%;
 }
 
 .step-wrapper.active {
@@ -38,6 +44,7 @@ body {
     float: none;
     padding: 0;
     width: 1%;
+
 }
 
 .step-indicator li:after {
@@ -47,7 +54,8 @@ body {
     height: 1px;
     position: absolute;
     width: 100%;
-    top: 32px; /* Adjusted to 32px for the default size */
+    top: 32px;
+    /* Adjusted to 32px for the default size */
     left: 50%;
 }
 
@@ -80,14 +88,18 @@ body {
 .step {
     background-color: #fff;
     border-radius: 50%;
-    border: 3px solid #ccc;
+    border: 1px solid #ccc;
     color: #ccc;
-    font-size: 30px; /* Adjusted size for simplicity */
-    height: 40px; /* Adjusted size for simplicity */
-    line-height: 42px; /* Adjusted size for simplicity */
+    font-size: 15px;
+    /* Adjusted size for simplicity */
+    height: 30px;
+    /* Adjusted size for simplicity */
+    line-height: 30px;
+    /* Adjusted size for simplicity */
     margin: 0 auto;
     position: relative;
-    width: 40px; /* Adjusted size for simplicity */
+    width: 30px;
+    /* Adjusted size for simplicity */
     z-index: 1;
 }
 
@@ -98,4 +110,25 @@ body {
 .caption {
     color: #ccc;
     padding: 11px 16px;
+}
+
+label {
+    font-size: 15px;
+}
+
+.required {
+    color: red;
+}
+
+#text {
+    text-align: center;
+}
+
+table {
+    width: 890px;
+}
+
+table input {
+
+    width: 190px;
 }

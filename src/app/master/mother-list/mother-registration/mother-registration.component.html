@@ -1,0 +1,818 @@
+<div class="container">
+    <div id="app">
+        <ol class="step-indicator">
+            <li *ngFor="let step of steps" [ngClass]="indicatorClass(step)" (click)="goToStep(step.id) ">
+                <div class="step"><i>{{step.id}}</i></div>
+                <div class="caption hidden-xs hidden-sm">Step <span>{{ step.id }}</span>: <span>{{ step.title }}</span>
+                </div>
+            </li>
+        </ol>
+
+        <div *ngIf="currentStep === 1">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="row card-header text-black">
+                                <div class=" col">
+                                    <div>
+                                        <h4 class="card-title">Personal Details</h4>
+                                    </div>
+                                </div>
+
+                                <div class="col">
+                                    <button class="btn btn-success float-right" onclick="history.back()">List</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form>
+                                    <div class="row mt-3">
+
+                                        <div class="col-md-4 ">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span> Mothers Type</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">MOM</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">HD</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox3"
+                                                    value="option3">
+                                                <label class="form-check-label" for="inlineCheckbox3">CD</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox3"
+                                                    value="option3">
+                                                <label class="form-check-label" for="inlineCheckbox3">R</label>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>State</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="1">--Select--</option>
+                                                    <option value="1">AP</option>
+                                                    <option value="2">TG</option>
+                                                    <option value="3">MP</option>
+                                                    <option value="3">GOA</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Districts</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="1">East godavari</option>
+                                                    <option value="2">West Godavari</option>
+                                                    <option value="3">Krishna</option>
+                                                </select>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span> Hospital</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="1">20240604_NI(NILFOR)</option>
+                                                    <option value="2">20240605_HY(HYDERABAD)</option>
+                                                    <option value="3">20240606_RIN(RAINBOW)</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span> IP No</label>
+                                                <input type="text" class="form-control" placeholder="IP No">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-5 ">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span> Mother Name</label>
+                                                <input type="text" class="form-control" placeholder="Mother Name"
+                                                    required>
+                                            </div>
+                                        </div>
+
+
+
+                                    </div>
+
+                                    <div class="row">
+
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span> Birth Date</label>
+                                                <input type="date" class="form-control" placeholder="Birth Date">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span> Weight</label>
+                                                <input type="text" class="form-control" placeholder="Weight" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Education</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="1">--Select--</option>
+                                                    <option value="1">10th</option>
+                                                    <option value="2">12 th</option>
+                                                    <option value="3">Graduation</option>
+                                                    <option value="3">Post Graduation</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>C/O</label>
+                                                <input type="text" class="form-control" placeholder="C/O">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Adress </label>
+                                                <textarea type="text" cols="2" class="form-control"
+                                                    placeholder="Address"></textarea>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Postal Code</label>
+                                                <input type="text" class="form-control" placeholder="First Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Mobile Number</label>
+                                                <input type="text" class="form-control" placeholder="Last Name">
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Mode Of Relation</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="1">East godavari</option>
+                                                    <option value="2">West Godavari</option>
+                                                    <option value="3">Krishna</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Postal Code</label>
+                                                <input type="text" class="form-control" placeholder="First Name">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Mobile Number</label>
+                                                <input type="text" class="form-control" placeholder="Last Name">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <!-- Add another requirement-->
+                </div>
+            </div>
+
+        </div>
+
+        <div *ngIf="currentStep === 2">
+            <!-- <h1>S</h1> -->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="row card-header text-black">
+                                <div class=" col">
+                                    <div>
+                                        <h4 class="card-title">Health Details</h4>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-success float-right" onclick="history.back()">List</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label>Mother Id</label>
+                                                <input type="text" class="form-control" placeholder="Mother Id"
+                                                    disabled>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span> IP No</label>
+                                                <input type="text" class="form-control" placeholder="IP No">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span> Delivery Date</label>
+                                                <input type="date" class="form-control" placeholder="Delivery Date">
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-4 ">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span> Mode Of Delivery</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">SPVD</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">NVD</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox3"
+                                                    value="option3">
+                                                <label class="form-check-label" for="inlineCheckbox3">LSCS</label>
+                                            </div>
+
+                                        </div>
+
+                                        <!-- <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>State</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="1">--Select--</option>
+                                                    <option value="1">AP</option>
+                                                    <option value="2">TG</option>
+                                                    <option value="3">MP</option>
+                                                    <option value="3">GOA</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                        <!-- <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span> Hospital</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="1">20240604_NI(NILFOR)</option>
+                                                    <option value="2">20240605_HY(HYDERABAD)</option>
+                                                    <option value="3">20240606_RIN(RAINBOW)</option>
+                                                </select>
+                                            </div>
+                                        </div> -->
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-3 ">
+                                            <div class="form-group">
+                                                <label>Gravida</label>
+                                                <input type="text" class="form-control" placeholder="Gravida" required>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Para</label>
+                                                <input type="text" class="form-control" placeholder="Para">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>EDD</label>
+                                                <input type="date" class="form-control" placeholder="Birth Date">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Gestation</label>
+                                                <input type="text" class="form-control" placeholder="Gestation">
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+
+                                        <div class="col-md-3">
+                                            <div class="form-group">
+                                                <label>Medical Illness History</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option value="1">--Select--</option>
+                                                    <option value="1">Diabetes</option>
+                                                    <option value="2">Thyroid</option>
+                                                    <option value="3">Arthritis</option>
+                                                    <option value="3">Asthma</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Surgical Illness History</label>
+                                                <input type="text" class="form-control"
+                                                    placeholder="Surgical Illness History">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Pain</label>
+                                                <select class="form-select" aria-label="Default select example">
+                                                    <option>--Select--</option>
+                                                    <option>Body Aches</option>
+                                                    <option>Head Aches</option>
+                                                    <option>Suture Aches</option>
+                                                    <option>Back Pain</option>
+                                                    <option>Shoulder Pain</option>
+                                                    <option>Epistotomy Pain</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <!-- <div class="row">
+                                        <div class="col-md-8">
+                                            <div class="form-group">
+                                                <label>Adress 1</label>
+                                                <textarea type="text" cols="2"   class="form-control" placeholder="Address"></textarea>
+                                            </div>
+                                        </div> -->
+
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-3 ">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span>Fetal Growth group</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">SFD</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">LFD</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox3"
+                                                    value="option3">
+                                                <label class="form-check-label" for="inlineCheckbox3">AFD</label>
+                                            </div>
+
+                                        </div>
+                                        <div class="col-md-5">
+                                            <div class="form-group">
+                                                <label>Mother Details Source</label>
+                                                <select class="form-select">
+                                                    <option>--Select--</option>
+                                                    <option>Wards Visit</option>
+                                                    <option>Mother Self</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ">
+                                            <div class="form-group">
+                                                <label><span class="required">*</span>Wards Visits Done By</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">No</label>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Reason For Milk Bank Visit</label>
+
+                                                <select class="form-select">
+                                                    <option>--Select--</option>
+                                                    <option>Milk Expression</option>
+                                                    <option>Breast Enlargement</option>
+                                                    <option>Hard Breast</option>
+                                                    <option>Only for PDHM</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Treatment given to the Mother</label>
+                                                <select class="form-select">
+                                                    <option>--Select--</option>
+                                                    <option>Diet Counselling</option>
+                                                    <option>Invested Syring technique</option>
+                                                    <option>Lacting and Positioning</option>
+                                                    <option>Pumping</option>
+                                                    <option>Ointment Suggested</option>
+                                                    <option>Neck or Shoulder Massage</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4 ">
+                                            <div class="form-group">
+                                                <label>Kangaroo Mother Care Done By</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">No</label>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                    <!-- <div align="center">
+                                            <button type="submit" class="btn btn-success pull-right">Save</button>&nbsp;
+                                            <button type="reset" class="btn btn-info pull-right">Reset</button>&nbsp;
+                                            <button type="cancel" class="btn btn-danger pull-right"
+                                                onclick="history.back()">Cancel</button>
+                                        </div> -->
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="form-group">
+                    <label for="select">Example select</label>
+                    <select class="form-control" name="select">
+                        <option>1</option>
+                        <option>2</option>
+                        <option>3</option>
+                        <option>4</option>
+                        <option>5</option>
+                    </select>
+                </div> -->
+
+        </div>
+
+        <div *ngIf="currentStep === 3">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="row card-header text-black">
+                                <div class=" col">
+                                    <div>
+                                        <h4 class="card-title">DSS Details</h4>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <button class="btn btn-success float-right" onclick="history.back()">List</button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Date of DSS</label>
+                                                <input type="date" class="form-control" placeholder="Date of DSS">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-4">
+                                            <div class="form-group">
+                                                <label>Source Of DSS</label>
+                                                <input type="text" class="form-control" placeholder="Source Of DSS">
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="row mt-3">
+                                        <div class="col-md-10 ">
+                                            <div class="form-group">
+                                                <label>Does the Donor Currently smoke or use tobacco in any form /any
+                                                    nicotine replacement therapy ?</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">No</label>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-8 ">
+                                            <div class="form-group">
+                                                <label>Does the Donor reqularly drink Alcohol ?</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-8 ">
+                                            <div class="form-group">
+                                                <label>Does the donor use or has she recently used any recreational
+                                                    /illegal drugs ?</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-8 ">
+                                            <div class="form-group">
+                                                <label>Has the donor received any Organ or issue transplant with last 12
+                                                    months ? </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-13 ">
+                                            <div class="form-group">
+                                                <label>Has the donor used any single use instrument for ear or other
+                                                    body piercing
+                                                    /permanent makeup applied by needle /receiving injection /accidental
+                                                    stick with contaminated needle within last 12 months ?</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-12 ">
+                                            <div class="form-group">
+                                                <label>Does the Donor have any acute infection , including clinical
+                                                    mastitis,and monilia
+                                                    and fungal infections of the nipple or breast requiring medical
+                                                    treatment ? </label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-13 ">
+                                            <div class="form-group">
+                                                <label>Is the donor in the 4-week period following a case of rubella or
+                                                    varicella (Chicken Pox)
+                                                    in the household starting from when the lesions crust over?</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-13 ">
+                                            <div class="form-group">
+                                                <label>Is the donor in the 4-week period following a reactivation of
+                                                    latent infection with herpes simple virus (HSV) or Varicella Zoster
+                                                    (Shingles)
+                                                    of the breast or thorax starting when the lesions crust over
+                                                    ?</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="row mt-3">
+                                        <div class="col-md-11 ">
+                                            <div class="form-group">
+                                                <label>Is the donor currently taking Anticancer drugs (antimetabolites)
+                                                    and /or Radioactive Substances ?</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox1"
+                                                    value="option1">
+                                                <label class="form-check-label" for="inlineCheckbox1">Yes</label>
+                                            </div>
+                                            <div class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" id="inlineCheckbox2"
+                                                    value="option2">
+                                                <label class="form-check-label" for="inlineCheckbox2">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <table class="border mt-5">
+
+
+                                        <div class="form-group row mt-3">
+                                            <label for="username" class="col-sm-3 col-form-label"
+                                                id="text"><b>Serological Tesing</b></label>
+                                            <div class="col-sm-3">
+                                                <label class="col-form-label" id="text"><b>Test done
+                                                        on(data)</b></label>
+                                            </div>
+                                            <div class="col-sm-3 ">
+                                                <label class="col-form-label"><b>Report recieved on(data)</b></label>
+                                            </div>
+                                            <div class="col-sm-3 ">
+                                                <label class="col-form-label " id="text"><b>Files</b></label>
+                                            </div>
+                                        </div>
+
+
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label " id="text">HIV I/II</label>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label" id="text">Hepatitis B and C</label>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+                                        <div class="form-group row">
+                                            <label class="col-sm-3 col-form-label" id="text">VDRL / RPR</label>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                        <div class="form-group row mt-3">
+                                            <label class="col-sm-3 col-form-label" id="text">Others (if any)</label>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                            <div class="col-sm-3 ">
+                                                <input type="text" class="form-control">
+                                            </div>
+                                        </div>
+
+                                    </table>
+
+                                    <div align="center" class="mt-4">
+                                        <button type="submit" class="btn btn-success pull-right">Save</button>&nbsp;
+                                        <button type="reset" class="btn btn-info pull-right">Reset</button>&nbsp;
+                                        <button type="cancel" class="btn btn-danger pull-right"
+                                            onclick="history.back()">Cancel</button>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <!-- <div class="form-group">
+                <label for="select">Example select</label>
+                <select class="form-control" name="select">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                </select>
+            </div> -->
+
+
+
+
+
+
+
+        <div class="step-wrapper" [ngClass]="{'active': isActive()}">
+            <button type="button" class="btn btn-primary" (click)="lastStep()" [disabled]="isFirstStep()">
+                Back
+            </button>&nbsp;
+            <button type="button" class="btn btn-primary" (click)="nextStep()" [disabled]="isLastStep()">
+                Next
+            </button>
+        </div>
+
+    </div>

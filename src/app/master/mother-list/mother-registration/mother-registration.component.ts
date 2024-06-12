@@ -1,24 +1,23 @@
 import { Component } from '@angular/core';
 
-
 interface Step {
   id: number;
   title: string;
   iconClass: string;
 }
 
-@Component({
-  selector: 'app-mothers-registration',
-  templateUrl: './mothers-registration.component.html',
-  styleUrls: ['./mothers-registration.component.css']
-})
 
-export class MothersRegistrationComponent {
+@Component({
+  selector: 'app-mother-registration',
+  templateUrl: './mother-registration.component.html',
+  styleUrls: ['./mother-registration.component.css']
+})
+export class MotherRegistrationComponent {
   currentStep: number = 1;
   steps: Step[] = [
     { id: 1, title: 'Personal Details', iconClass: 'fa fa-map-marker' },
-    { id: 2, title: 'Hospital Details', iconClass: 'fa fa-folder-open' },
-    { id: 3, title: 'Send', iconClass: 'fa fa-paper-plane' }
+    { id: 2, title: 'Health Details', iconClass: 'fa fa-folder-open' },
+    { id: 3, title: 'DSS Details', iconClass: 'fa fa-paper-plane' },
   ];
 
   onStepChange(step: number) {
@@ -28,7 +27,7 @@ export class MothersRegistrationComponent {
   indicatorClass(step: Step) {
     return {
       active: step.id === this.currentStep,
-      complete: this.currentStep > step.id
+      complete: this.currentStep > step.id,
     };
   }
 
@@ -37,7 +36,7 @@ export class MothersRegistrationComponent {
   }
 
   isActive() {
-    return this.steps.some(step => step.id === this.currentStep);
+    return this.steps.some((step) => step.id === this.currentStep);
   }
 
   isFirstStep() {

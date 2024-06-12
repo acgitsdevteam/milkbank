@@ -9,6 +9,10 @@ import { DiseaseListComponent } from './disease-list/disease-list.component';
 import { DiseaseRegisterComponent } from './disease-list/disease-register/disease-register.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { AddItemComponent } from './item-list/add-item/add-item.component';
+import { MotherListComponent } from './mother-list/mother-list.component';
+import { MotherRegistrationComponent } from './mother-list/mother-registration/mother-registration.component';
+import { BabyListComponent } from './baby-list/baby-list.component';
+import { BabyRegisterComponent } from './baby-list/baby-register/baby-register.component';
 
 const routes: Routes = [
   {path:'users',component:UsersComponent},
@@ -19,7 +23,11 @@ const routes: Routes = [
   {path:'diseases-list',component:DiseaseListComponent},
   {path:'disease-registration',component:DiseaseRegisterComponent},
   {path:'item-list',component:ItemListComponent},
-  {path:'add-item',component:AddItemComponent}
+  {path:'add-item',component:AddItemComponent},
+  {path:'mothers-list',component:MotherListComponent},
+  {path:'mothers-registration',component:MotherRegistrationComponent},
+  {path:'baby-list',component:BabyListComponent},
+  {path:'baby-register',component:BabyRegisterComponent}
 
 
 ];

@@ -9,13 +9,16 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterPipe } from './filterpipe.pipe';
 import { UserRegistrationComponent } from './users/user-registration/user-registration.component';
-import { MothersRegistrationComponent } from './mothers-registration/mothers-registration.component';
 import { HospitalComponent } from './hospital/hospital.component';
 import { HospitalRegistrationComponent } from './hospital/hospital-registration/hospital-registration.component';
 import { DiseaseListComponent } from './disease-list/disease-list.component';
 import { DiseaseRegisterComponent } from './disease-list/disease-register/disease-register.component';
 import { ItemListComponent } from './item-list/item-list.component';
 import { AddItemComponent } from './item-list/add-item/add-item.component';
+import { MotherListComponent } from './mother-list/mother-list.component';
+import { MotherRegistrationComponent } from './mother-list/mother-registration/mother-registration.component';
+import { BabyListComponent } from './baby-list/baby-list.component';
+import { BabyRegisterComponent } from './baby-list/baby-register/baby-register.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,16 @@ import { AddItemComponent } from './item-list/add-item/add-item.component';
     StateComponent,
     FilterPipe,
     UserRegistrationComponent,
-    MothersRegistrationComponent,
     HospitalComponent,
     HospitalRegistrationComponent,
     DiseaseListComponent,
     DiseaseRegisterComponent,
     ItemListComponent,
     AddItemComponent,
+    MotherListComponent,
+    MotherRegistrationComponent,
+    BabyListComponent,
+    BabyRegisterComponent,
   ],
   imports: [
     CommonModule,
