@@ -12,6 +12,10 @@ import { UserRegistrationComponent } from './users/user-registration/user-regist
 import { MothersRegistrationComponent } from './mothers-registration/mothers-registration.component';
 import { HospitalComponent } from './hospital/hospital.component';
 import { HospitalRegistrationComponent } from './hospital/hospital-registration/hospital-registration.component';
+import { DiseaseListComponent } from './disease-list/disease-list.component';
+import { DiseaseRegisterComponent } from './disease-list/disease-register/disease-register.component';
+import { ItemListComponent } from './item-list/item-list.component';
+import { AddItemComponent } from './item-list/add-item/add-item.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,11 @@ import { HospitalRegistrationComponent } from './hospital/hospital-registration/
     UserRegistrationComponent,
     MothersRegistrationComponent,
     HospitalComponent,
-    HospitalRegistrationComponent
+    HospitalRegistrationComponent,
+    DiseaseListComponent,
+    DiseaseRegisterComponent,
+    ItemListComponent,
+    AddItemComponent,
   ],
   imports: [
     CommonModule,
