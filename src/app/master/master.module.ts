@@ -9,6 +9,9 @@ import { FormsModule } from '@angular/forms';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { FilterPipe } from './filterpipe.pipe';
 import { UserRegistrationComponent } from './users/user-registration/user-registration.component';
+import { MothersRegistrationComponent } from './mothers-registration/mothers-registration.component';
+import { HospitalComponent } from './hospital/hospital.component';
+import { HospitalRegistrationComponent } from './hospital/hospital-registration/hospital-registration.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +19,10 @@ import { UserRegistrationComponent } from './users/user-registration/user-regist
     UsersComponent,
     StateComponent,
     FilterPipe,
-    UserRegistrationComponent
+    UserRegistrationComponent,
+    MothersRegistrationComponent,
+    HospitalComponent,
+    HospitalRegistrationComponent
   ],
   imports: [
     CommonModule,
