@@ -9,13 +9,32 @@ import { DashboardBodyComponent } from './dashboard/dashboard-body/dashboard-bod
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'access', loadChildren: () => import('./access/access.module').then(m => m.AccessModule) },
   {
-    path: 'dashboard', component: DashboardComponent, children: [
-      { path: '', component: DashboardBodyComponent},
-      { path: 'master', loadChildren: () => import('./master/master.module').then(m => m.MasterModule) },
-
-    ]
+    path: 'access',
+    loadChildren: () =>
+      import('./access/access.module').then((m) => m.AccessModule),
+  },
+  {
+    path: 'dashboard',
+    component: DashboardComponent,
+    children: [
+      { path: '', component: DashboardBodyComponent },
+      {
+        path: 'master',
+        loadChildren: () =>
+          import('./master/master.module').then((m) => m.MasterModule),
+      },
+      {
+        path: 'access',
+        loadChildren: () =>
+          import('./access/access.module').then((m) => m.AccessModule),
+      },
+      {
+        path: 'transections',
+        loadChildren: () =>
+          import('./transections/transections.module').then((m) => m.TransectionsModule),
+      },
+    ],
   },
 ];
 

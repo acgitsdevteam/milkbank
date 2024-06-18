@@ -19,6 +19,10 @@ import { MotherListComponent } from './mother-list/mother-list.component';
 import { MotherRegistrationComponent } from './mother-list/mother-registration/mother-registration.component';
 import { BabyListComponent } from './baby-list/baby-list.component';
 import { BabyRegisterComponent } from './baby-list/baby-register/baby-register.component';
+import { DistrictListComponent } from './district-list/district-list.component';
+import { DistrictRegistrationComponent } from './district-list/district-registration/district-registration.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
+import { EmployeeRegistrationComponent } from './employee-list/employee-registration/employee-registration.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +41,10 @@ import { BabyRegisterComponent } from './baby-list/baby-register/baby-register.c
     MotherRegistrationComponent,
     BabyListComponent,
     BabyRegisterComponent,
+    DistrictListComponent,
+    DistrictRegistrationComponent,
+    EmployeeListComponent,
+    EmployeeRegistrationComponent,
   ],
   imports: [
     CommonModule,

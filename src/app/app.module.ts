@@ -22,7 +22,7 @@ import { NgxPaginationModule } from 'ngx-pagination';
     HomeComponent,
     DashboardComponent,
     DashboardBodyComponent,
-    BreadcrumbComponent
+    BreadcrumbComponent,
   ],
   imports: [
     BrowserModule,
