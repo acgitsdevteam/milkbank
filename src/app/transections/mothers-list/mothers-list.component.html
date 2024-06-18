@@ -1,0 +1,88 @@
+<div>
+    <button class="btn btn-success addBtn" routerLink="/dashboard/transections/mother-register">Add Mother</button>
+</div>
+<div class="mt-4 custom-border">
+    <div class="row">
+        <h5 class="mb-3">Mother Details</h5>
+        <div class="col">
+            <div class="d-flex">
+                <p class="mt-2 mr-2">Show:</p>
+                <input type="text" class="form-control" style="width: 60px;" [(ngModel)]="currentPage">
+                <p class="mt-2 ml-2">entries</p>
+            </div>
+
+        </div>
+        <div class="col">
+            <input type="text" class="form-control srch" placeholder="Search" [(ngModel)]="searchTerm">
+        </div>
+    </div>
+     <table class="table table-bordered mt-3" style="width: 20px;">
+        <thead>
+            <!-- <tr>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+            </tr> -->
+            <tr>
+                <th>Mother Id</th>
+                <th>Date</th>
+                <th>Name</th>
+                <th>Mother Type</th>
+                <th>Baby Weight</th>
+                <th>Container Id</th>
+                <th>Pasturized</th>
+                <th>Amou of Expredml</th>
+                <th>Donateddate</th>
+                <th>IDPHM</th>
+                 <th>QuanPDHMml</th>
+               <th>PDHMReq</th>
+                <th>PDHMissue</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate over data -->
+            <tr
+                *ngFor="let item of data | filter: searchTerm | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+                <td>{{ item.motherid }}</td>
+                <td>{{ item.date }}</td>
+                <td>{{item.name}}</td>
+                <td>{{ item.mothertype }}</td>
+                <td>{{item.babycurrentweight}}</td>
+                <td>{{item.donormilkcontainerID}}</td>
+                <td>{{item.pasturized}}</td>
+                <td>{{item.amountexpressedml}}</td>
+                <td>{{item.donateddate}}</td>
+                <td>{{item.IDPHM}}</td>
+                 <td>{{item.QuantityPDHMml}}</td>
+               <td>{{item.PDHMRequisition}}</td>
+                <td>{{item.PDHMissued}}</td>
+
+                 
+            </tr>
+        </tbody>
+    </table>
+    <!-- Pagination controls -->
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
