@@ -1,0 +1,48 @@
+<div>
+    <button class="btn btn-success addBtn" routerLink="/dashboard/transections/pasteurization-discard-register">Add Pasturized </button>
+</div>
+<div class="mt-4 custom-border">
+    <div class="row">
+        <div class="col">
+            <div class="d-flex">
+                <p class="mt-2 mr-2">Show:</p>
+                <input type="text" class="form-control" style="width: 60px;" [(ngModel)]="currentPage">
+                <p class="mt-2 ml-2">entries</p>
+            </div>
+
+        </div>
+        <div class="col">
+            <input type="text" class="form-control srch" placeholder="Search" [(ngModel)]="searchTerm">
+        </div>
+    </div>
+     <table class="table table-bordered mt-3">
+        <thead>
+            <tr>
+                <th>S.No</th>
+                <th>Milk Collection Date</th>
+                <th>Milk Discard Date</th>
+                <th>Donar No</th>
+                <th>Name of the Doner</th>
+                <th>Reason for Discard</th>
+                <th>Amount od Dicard Milk</th>
+                <th>Pasturized(yes/no)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr
+            *ngFor="let item of data | filter: searchTerm | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+                <td>{{item.id}}</td>
+                <td>{{item.MilkCollectionDate }}</td>
+                <td>{{item.MilkDiscardDate}}</td>
+                <td>{{item.DonarNo }}</td>
+                <td>{{item.NameoftheDoner }}</td>
+                <td>{{item.ReasonforDiscard}}</td>
+                <td>{{item.AmountodDicardMilk}}</td>
+                <td>{{item.Pasturized_yesorno}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>
+
+
