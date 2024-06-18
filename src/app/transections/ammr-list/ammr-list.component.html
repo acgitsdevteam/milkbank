@@ -1,0 +1,67 @@
+<div>
+    <button class="btn btn-success addBtn" routerLink="/dashboard/transections/ammr-register">Add AMMR</button>
+</div>
+<div class="mt-4 custom-border">
+    <div class="row">
+        <div class="col">
+            <div class="d-flex">
+                <p class="mt-2 mr-2">Show:</p>
+                <input type="text" class="form-control" style="width: 60px;" [(ngModel)]="currentPage">
+                <p class="mt-2 ml-2">entries</p>
+            </div>
+
+        </div>
+        <div class="col">
+            <input type="text" class="form-control srch" placeholder="Search" [(ngModel)]="searchTerm">
+        </div>
+    </div>
+     <table class="table table-bordered mt-3">
+        <thead>
+            <!-- <tr>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+                <th><input type="text" name="" id=""></th>
+            </tr> -->
+            <tr>
+                <th>S.No</th>
+                <th>Tran Date</th>
+                <th>Infant ID</th>
+                <th>Infant Name</th>
+                <th>DOB</th>
+                <th>In Born/Out Born</th>
+                <th>CurrWtingms</th>
+                <th>ReasonforMilkReq</th>
+                <!-- <th>RecMilkContainerID</th>
+                <th>Data_TimeofReaction</th>
+                <th>DetailsofRemarks</th>
+                <th>ReportingTime</th> -->
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Iterate over data -->
+            <tr
+            *ngFor="let item of data | filter: searchTerm | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
+                <td>{{item.id }}</td>
+                <td>{{item.TranDate}}</td>
+                <td>{{item.InfantID }}</td>
+                <td>{{item.InfantName }}</td>
+                <td>{{item.DOB}}</td>
+                <td>{{item.InBornorOutBorn}}</td>
+                <td>{{item.CurrWtingms}}</td>
+                <td>{{item.ReasonforMilkReq}}</td>
+                <!-- <td>{{item.RecMilkContainerID}}</td>
+                <td>{{item.Data_TimeofReaction}}</td>
+                <td>{{item.DetailsofRemarks}}</td>
+                <td>{{item.ReportingTime}}</td> -->
+            </tr>
+        </tbody>
+    </table>
+    <!-- Pagination controls -->
+    <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>
+
+
