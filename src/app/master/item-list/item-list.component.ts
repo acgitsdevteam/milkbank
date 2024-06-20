@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class ItemListComponent {
   data = [
-    { id:1, Itemdiscription: 'plastic', itemtype: 'milkcollectionbottles', ManufacturedBy:'princy', ExpDate:'18months' },
-    { id:2, Itemdiscription: 'plastic', itemtype: 'bottle caps', ManufacturedBy:'wipro', ExpDate:'22months' },
-    { id:3, Itemdiscription: 'green', itemtype: 'cleaning cloth', ManufacturedBy:'germ free', ExpDate:'6months' },
-    { id:4, Itemdiscription: 'pink', itemtype:'towels', ManufacturedBy:'princy', ExpDate:'18months' },
-    { id:5, Itemdiscription: 'plastic', itemtype: 'Bins', ManufacturedBy:'chethan', ExpDate:'22months'},
-    { id:6, Itemdiscription: 'Apron', itemtype: 'Gown', ManufacturedBy:'Mediline', ExpDate:'6months'},
-    { id:7, Itemdiscription: 'Cotton', itemtype: 'Gauze', ManufacturedBy:'Dealmed', ExpDate:'12months'},
-    { id:8, Itemdiscription: 'Steel', itemtype: 'Trace', ManufacturedBy:'shire', ExpDate:'5 years' }
+    { id:1, Itemdiscription: 'plastic', itemtype: 'milkcollectionbottles', ManufacturedBy:'princy', ExpDate:'12/07/2025' },
+    { id:2, Itemdiscription: 'plastic', itemtype: 'bottle caps', ManufacturedBy:'wipro', ExpDate:'25/03/2025' },
+    { id:3, Itemdiscription: 'green', itemtype: 'cleaning cloth', ManufacturedBy:'germ free', ExpDate:'11/09/2024' },
+    { id:4, Itemdiscription: 'pink', itemtype:'towels', ManufacturedBy:'princy', ExpDate:'18/06/2025' },
+    { id:5, Itemdiscription: 'plastic', itemtype: 'Bins', ManufacturedBy:'chethan', ExpDate:'22/04/2025'},
+    { id:6, Itemdiscription: 'Apron', itemtype: 'Gown', ManufacturedBy:'Mediline', ExpDate:'6/11/2024'},
+    { id:7, Itemdiscription: 'Cotton', itemtype: 'Gauze', ManufacturedBy:'Dealmed', ExpDate:'12/12/25'},
+    { id:8, Itemdiscription: 'Steel', itemtype: 'Trace', ManufacturedBy:'shire', ExpDate:'5/07/2025' }
     // Add more data as needed
   ];
 

@@ -3,6 +3,8 @@
 </div>
 <div class="mt-4 custom-border">
     <div class="row">
+        <h5 class="mb-3">Ammr Details</h5>
+
         <div class="col">
             <div class="d-flex">
                 <p class="mt-2 mr-2">Show:</p>
@@ -15,30 +17,22 @@
             <input type="text" class="form-control srch" placeholder="Search" [(ngModel)]="searchTerm">
         </div>
     </div>
+    <div style="overflow-x: auto;">
      <table class="table table-bordered mt-3">
         <thead>
-            <!-- <tr>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-            </tr> -->
             <tr>
                 <th>S.No</th>
                 <th>Tran Date</th>
                 <th>Infant ID</th>
-                <th>Infant Name</th>
+                <th>InfantName</th>
                 <th>DOB</th>
                 <th>In Born/Out Born</th>
                 <th>CurrWtingms</th>
                 <th>ReasonforMilkReq</th>
-                <!-- <th>RecMilkContainerID</th>
+                <th>RecMilkContainerID</th>
                 <th>Data_TimeofReaction</th>
                 <th>DetailsofRemarks</th>
-                <th>ReportingTime</th> -->
+                <th>ReportingTime</th>
             </tr>
         </thead>
         <tbody>
@@ -53,15 +47,16 @@
                 <td>{{item.InBornorOutBorn}}</td>
                 <td>{{item.CurrWtingms}}</td>
                 <td>{{item.ReasonforMilkReq}}</td>
-                <!-- <td>{{item.RecMilkContainerID}}</td>
+                <td>{{item.RecMilkContainerID}}</td>
                 <td>{{item.Data_TimeofReaction}}</td>
                 <td>{{item.DetailsofRemarks}}</td>
-                <td>{{item.ReportingTime}}</td> -->
+                <td>{{item.ReportingTime}}</td>
             </tr>
         </tbody>
     </table>
     <!-- Pagination controls -->
     <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
+</div>
 </div>
 
 

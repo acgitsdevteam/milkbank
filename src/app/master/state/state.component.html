@@ -1,7 +1,7 @@
 
 <div class="mt-4 custom-border">
     <div class="row">
-        <h4>state details</h4>
+        <h5>state details</h5>
         <div class="col">
             <div class="d-flex">
                 <p class="mt-2 mr-2">Show:</p>
@@ -16,15 +16,6 @@
     </div>
      <table class="table table-bordered mt-3">
         <thead>
-            <!-- <tr>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-            </tr> -->
             <tr>
                 
                 <th>state</th>
@@ -34,7 +25,6 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Iterate over data -->
             <tr
                 *ngFor="let item of data | filter: searchTerm | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
                 <td>{{ item.state }}</td>
@@ -43,7 +33,6 @@
             </tr>
         </tbody>
     </table>
-    <!-- Pagination controls -->
     <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
 </div>
 

@@ -62,18 +62,10 @@ export class EmployeeListComponent {
       Designation: 'ward sweeper',
       Mobile: '9956789123',
     },
-    // Add more data as needed
   ];
-
-  // Search functionality
   searchTerm: string = '';
-
-  // Pagination
   currentPage: any = 1;
   itemsPerPage: any = 5;
-
-  // Function to add new item
   addItem() {
-    // Implement logic to add new item here
   }
 }

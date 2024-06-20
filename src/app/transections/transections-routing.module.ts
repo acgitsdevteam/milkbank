@@ -9,6 +9,7 @@ import { AmmrRegisterComponent } from './ammr-list/ammr-register/ammr-register.c
 import { AutoClaveListComponent } from './auto-clave-list/auto-clave-list.component';
 import { AutoClaveRegisterComponent } from './auto-clave-list/auto-clave-register/auto-clave-register.component';
 import { PasteurizationDiscardListComponent } from './pasteurization-discard-list/pasteurization-discard-list.component';
+import { PasteurizationDiscardRegisterComponent } from './pasteurization-discard-list/pasteurization-discard-register/pasteurization-discard-register.component';
 
 const routes: Routes = [
   { path: 'mothers-list', component: MothersListComponent },
@@ -20,7 +21,7 @@ const routes: Routes = [
   { path: 'auto-clave-list',component:AutoClaveListComponent},
   { path: 'auto-clave-register',component:AutoClaveRegisterComponent},
   { path: 'pasteurization-discard-list',component:PasteurizationDiscardListComponent},
-  { path: 'pasteurization-discard-register',component:PasteurizationRegistrationComponent}
+  { path: 'pasteurization-discard-register',component:PasteurizationDiscardRegisterComponent}
 
 ];
 
