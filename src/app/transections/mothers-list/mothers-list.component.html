@@ -16,6 +16,7 @@
             <input type="text" class="form-control srch" placeholder="Search" [(ngModel)]="searchTerm">
         </div>
     </div>
+    <div style="overflow-x: auto;" >
      <table class="table table-bordered mt-3" style="width: 20px;">
         <thead>
             <!-- <tr>
@@ -35,12 +36,12 @@
                 <th>Baby Weight</th>
                 <th>Container Id</th>
                 <th>Pasturized</th>
-                <th>Amou of Expredml</th>
-                <th>Donateddate</th>
-                <th>IDPHM</th>
-                 <th>QuanPDHMml</th>
-               <th>PDHMReq</th>
-                <th>PDHMissue</th>
+                <th>Amount of Expred ml</th>
+                <th>Donated date</th>
+                <th>IDPHM ml</th>
+                 <th>Quan PDHM ml</th>
+               <th>PDHM Requition</th>
+                <th>PDHM issue</th>
             </tr>
         </thead>
         <tbody>
@@ -69,7 +70,7 @@
     <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
 </div>
 
-
+</div>
 
 
 

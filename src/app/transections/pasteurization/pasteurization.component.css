@@ -10,8 +10,20 @@
 
         .table {
             text-align: center;
-            max-width: 100px;
-        }
+                border-collapse: collapse;
+                border-spacing: 0;
+                width: 100%;
+                border: 1px solid #ddd;
+                height: 200px;
+            }
+            
+            th,
+            td {
+                text-align: left;
+                padding: 8px;
+            }
+
+        
 
         .srch {
             width: 35%;
