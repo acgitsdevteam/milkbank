@@ -4,6 +4,8 @@
 
 <div class="mt-4 custom-border">
     <div class="row">
+        <h5 class="mb-3">Disease Details</h5>
+
         <div class="col">
             <div class="d-flex">
                 <p class="mt-2 mr-2">Show:</p>
@@ -18,15 +20,6 @@
     </div>
      <table class="table table-bordered mt-3">
         <thead>
-            <!-- <tr>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-                <th><input type="text" name="" id=""></th>
-            </tr> -->
             <tr>
                 <th>S.No</th>
                 <th>Description</th>
@@ -34,7 +27,6 @@
             </tr>
         </thead>
         <tbody>
-            <!-- Iterate over data -->
             <tr
                 *ngFor="let item of data | filter: searchTerm | paginate: { itemsPerPage: itemsPerPage, currentPage: currentPage }">
                 <td>{{ item.id }}</td>
@@ -44,6 +36,5 @@
             </tr>
         </tbody>
     </table>
-    <!-- Pagination controls -->
     <pagination-controls (pageChange)="currentPage = $event"></pagination-controls>
 </div>

@@ -8,8 +8,8 @@ import { Component } from '@angular/core';
 export class PasteurizationDiscardListComponent {
   data = [
     { id: 1,
-      MilkCollectionDate: '14/06/2019',
-      MilkDiscardDate: '4/12/19',
+      MilkCollectionDate: '06/14/2019',
+      MilkDiscardDate: '12/04/19',
       DonarNo:'D001993',
       NameoftheDoner:'Satya',
       ReasonforDiscard:'Blood Transfusion',
@@ -18,8 +18,8 @@ export class PasteurizationDiscardListComponent {
    },
  
        { id: 2,
-        MilkCollectionDate: '14/06/2019',
-        MilkDiscardDate: '4/12/19',
+        MilkCollectionDate: '06/14/2019',
+        MilkDiscardDate: '12/04/19',
         DonarNo:'D001995',
         NameoftheDoner:'Divya',
         ReasonforDiscard:'Blood Transfusion',
@@ -28,8 +28,8 @@ export class PasteurizationDiscardListComponent {
        },
  
        { id: 3,
-        MilkCollectionDate: '14/06/2019',
-        MilkDiscardDate: '4/12/19',
+        MilkCollectionDate: '06/14/2019',
+        MilkDiscardDate: '12/04/19',
         DonarNo:'D001994',
         NameoftheDoner:'Poorna',
         ReasonforDiscard:'Blood Transfusion',
@@ -38,8 +38,8 @@ export class PasteurizationDiscardListComponent {
        },
  
        { id: 4,
-        MilkCollectionDate: '15/06/2019',
-        MilkDiscardDate: '4/12/19',
+        MilkCollectionDate: '06/15/2019',
+        MilkDiscardDate: '12/04/19',
         DonarNo:'D001993',
         NameoftheDoner:'Latha',
         ReasonforDiscard:'Blood Transfusion',
@@ -48,8 +48,8 @@ export class PasteurizationDiscardListComponent {
        },
  
        { id: 5,
-        MilkCollectionDate: '15/06/2019',
-        MilkDiscardDate: '4/12/19',
+        MilkCollectionDate: '06/15/2019',
+        MilkDiscardDate: '12/04/19',
         DonarNo:'D001994',
         NameoftheDoner:'Geetha',
         ReasonforDiscard:'Blood Transfusion',
@@ -58,8 +58,8 @@ export class PasteurizationDiscardListComponent {
        },
  
        { id: 6,
-        MilkCollectionDate: '16/06/2019',
-        MilkDiscardDate: '4/12/19',
+        MilkCollectionDate: '06/16/2019',
+        MilkDiscardDate: '12/04/19',
         DonarNo:'D001995',
         NameoftheDoner:'Surya',
         ReasonforDiscard:'Blood Transfusion',
