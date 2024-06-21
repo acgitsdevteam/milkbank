@@ -16,7 +16,8 @@
             <input type="text" class="form-control srch" placeholder="Search" [(ngModel)]="searchTerm">
         </div>
     </div>
-     <table class="table table-bordered mt-3" style="width: 20px;">
+    <div style = "overflow-x: auto;">
+     <table class="table table-bordered mt-3" >
         <thead>
             <!-- <tr>
                 <th><input type="text" name="" id=""></th>
@@ -29,22 +30,22 @@
             </tr> -->
             <tr>
                 <th>Sl.No</th>
-                <th>PasturizedDate</th>
+                <th>Pasteurized Date</th>
                 <th>ExpDate</th>
-                <th>DonrsMilkConID</th>
+                <th>Donors Milk ConID</th>
                 <th>Batch NO</th>
                 <th>Bttls in Batch</th>
                 <th>Start Time</th>
                 <th>End Time</th>
                 <th>ReqForm No</th>
-                <th>Smpl10mlLabtest</th>
-                <th>SmplCollDateAndTime</th>
+                <th>Smpl 10ml Labtest</th>
+                <th>Smpl Coll Date & Time</th>
                 <th>Lab agent MobileNo</th>
                 <th>Culture Report</th>
-                <th>ReasonforPositive</th>
-                <th>TestResDate</th>
-                <th>EligibleDiscard</th>
-                <th>OfficerName</th>
+                <!-- <th>ReasonforPositive</th> -->
+                <th>Test ResDate</th>
+                <th>Eligible Discard</th>
+                <th>Officer Name</th>
             </tr>
         </thead>
         <tbody>
@@ -64,7 +65,7 @@
                 <td>{{item.SmplCollDateAndTime}}</td>
                  <td>{{item.LabagentMobileNo}}</td> 
                 <td>{{item.CultureReport}}</td>
-                <td>{{item.ReasonforPositive}}</td> 
+                <!-- <td>{{item.ReasonforPositive}}</td>  -->
                 <td>{{item.TestResDate}}</td>
                 <td>{{item.EligibleDiscard}}</td>
                 <td>{{item.OfficerName}}</td>
@@ -78,7 +79,7 @@
 </div>
 
 
-
+</div>
 
 
 

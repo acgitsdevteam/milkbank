@@ -52,7 +52,7 @@ export class PasteurizationComponent {
       DonorsMilkContainerID: '103',
       BatchNO: '132',
       NoofBottlesintheBatch: '25',
-      Starttime: '12:22:03am',
+      Starttime: '12:22:03pm',
       Endtime: '02:12:12pm',
       ReqFormNo: '1234',
       Sample10mlsenttolab: 'Yes',
